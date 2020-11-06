@@ -13,7 +13,7 @@
 .description-box {
     grid-row: 1;
     grid-column: 2;
-    align-self: center;
+    align-self:center;
 }
 
 .search-container {
@@ -21,7 +21,7 @@
     grid-column: 2;
     width: 700px;
     height: 100px;
-    align-self: center;
+    align-self:  start
 }
 
 .input {

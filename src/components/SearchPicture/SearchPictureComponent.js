@@ -2,26 +2,24 @@ import React, { useState, useEffect } from "react";
 import "./SearchPictureComponent.css";
 import Unsplash, { toJson } from "unsplash-js";
 import { UNSPLASH_KEY } from "../../env";
-import ResultsComponent from "../../components/Results/ResultsComponent";
+import ResultsComponent from "../Hints/HintsComponent";
 
-const SearchPictureComponent = () => {
+const SearchPictureComponent = ({ history }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+
   const unsplash = new Unsplash({
     accessKey: UNSPLASH_KEY,
   });
-  const searchResults = async () => {
-    try {
-      unsplash.search
-        .photos(query)
-        .then(toJson)
-        .then(({ results }) => {
-          setResults(results);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+  const searchResults = () => {
+    unsplash.search
+      .collections(query)
+      .then(toJson)
+      .then((json) => {
+        setResults(json.results);
+      });
   };
+
   useEffect(() => {
     if (query.length >= 3) {
       searchResults();
@@ -29,8 +27,8 @@ const SearchPictureComponent = () => {
   }, [query]);
 
   return (
-    <>
-      <form className="form">
+    <div className="results-container">
+      <ul role="listbox">
         <input
           type="search"
           name="suggestionsQuery"
@@ -38,14 +36,14 @@ const SearchPictureComponent = () => {
           className="input"
           aria-autocomplete="list"
           value={query}
-          placeholder={`enter some value`}
+          placeholder={``}
           onChange={(event) => {
             setQuery(event.target.value);
           }}
         />
-        {results.length >= 3 ? <ResultsComponent results={results} /> : null}
-      </form>
-    </>
+        <ResultsComponent history={history} query={query} results={results} />
+      </ul>
+    </div>
   );
 };
 export default SearchPictureComponent;
