@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./SearchPictureComponent.css";
 import Unsplash, { toJson } from "unsplash-js";
 import { UNSPLASH_KEY } from "../../env";
-import ResultsComponent from "../Hints/HintsComponent";
+import HintsComponent from "../Hints/HintsComponent";
 
-const SearchPictureComponent = ({ history }) => {
+const SearchPictureComponent = (props) => {
+  const { history } = props;
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
@@ -41,7 +42,7 @@ const SearchPictureComponent = ({ history }) => {
             setQuery(event.target.value);
           }}
         />
-        <ResultsComponent history={history} query={query} results={results} />
+        <HintsComponent history={history} query={query} results={results} />
       </ul>
     </div>
   );

@@ -6,7 +6,6 @@
 .results-container input {
     width: 100%;
     border: none;
-    border: 1px solid grey;
     text-align: left;
     color: rgb(86, 86, 86);
     box-sizing: border-box;

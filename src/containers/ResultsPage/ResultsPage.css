@@ -1,0 +1,25 @@
+.ResultsPage {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.2fr 0.6fr 0.2fr;
+    grid-template-rows: 0.2fr 0.2fr 0.6fr;
+}
+
+.SearchPictureComponent{
+    position: fixed;
+    width: 60%;
+    top:5%;
+    left: 5%;
+}
+
+.title {
+    padding-top: 10px; 
+    grid-row: 2;
+    grid-column: 1;
+    font-weight: 800;
+    font-size: 40px;
+}
+.pictures {
+    grid-row: 3;
+    grid-column: 1/3;
+}
