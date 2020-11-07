@@ -8,7 +8,7 @@ export const searchByKeyword = (keyword) => {
   });
   return async (dispatch) => {
     unsplash.search
-      .collections(keyword)
+      .photos(keyword)
       .then(toJson)
       .then((json) => {
         dispatch({ type: SEARCH_BY_KEYWORD, imagesData: json.results });
