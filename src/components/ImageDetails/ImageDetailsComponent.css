@@ -1,3 +1,22 @@
-.ImageDetails{
-    
+.img {
+    object-fit: cover;
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.Location {
+    color: aliceblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    justify-self: left;
+    padding-left: 10%
+}
+
+.Username {
+    color: aliceblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    justify-self: left;
+    padding-top: 5%;
+    padding-left: 10%
 }

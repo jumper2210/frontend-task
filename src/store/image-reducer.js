@@ -1,4 +1,4 @@
-import { SEARCH_BY_KEYWORD, SET_DETAILS } from "./image-action"
+import { SEARCH_BY_KEYWORD, SET_DETAILS, RESET_DETAILS } from "./image-action"
 import ImagesDetailsModel from "../helpers/ImageDetailsModel"
 
 const initialValue = {
@@ -21,6 +21,11 @@ const reducer = (state = initialValue, action) => {
       return {
         ...state,
         details: state.details.concat(newImageDetails),
+      }
+    case RESET_DETAILS:
+      return {
+        ...state,
+        details: [],
       }
     default:
       return state

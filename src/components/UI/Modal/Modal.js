@@ -3,7 +3,6 @@ import "./Modal.css"
 import BackDrop from "../Backdrop/Backdrop"
 
 const Modal = (props) => {
-  console.log(props.modalClose)
   return (
     <React.Fragment>
       <BackDrop show={props.show} clicked={props.modalClose} />

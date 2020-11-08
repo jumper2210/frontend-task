@@ -1,6 +1,7 @@
 import { UNSPLASH_KEY } from "../env"
 import Unsplash, { toJson } from "unsplash-js"
 
+export const RESET_DETAILS = "RESET_DETAILS"
 export const SEARCH_BY_KEYWORD = "SEARCH_BY_KEYWORD"
 export const SET_DETAILS = "SET_DETAILS"
 
@@ -29,6 +30,13 @@ export const setDetails = (userInfo, imageUrl) => {
         userInfo: userInfo,
         imageUrl: imageUrl,
       },
+    })
+  }
+}
+export const resetDetails = () => {
+  return async (dispatch) => {
+    dispatch({
+      type: RESET_DETAILS,
     })
   }
 }

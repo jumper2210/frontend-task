@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import SearchPictureComponent from "../../components/SearchPicture/SearchPictureComponent"
 import "./ResultsPage.css"
 import { useSelector } from "react-redux"
@@ -16,6 +16,7 @@ const ResultsPage = (props) => {
 
   const cancelShowDetailsHandler = () => {
     setIsShowDetails(false)
+    dispatch(imageActions.resetDetails())
   }
 
   let display = null
@@ -27,7 +28,6 @@ const ResultsPage = (props) => {
       </Modal>
     )
   }
-
   return (
     <div className="ResultsPage">
       <div className="SearchPictureComponent">

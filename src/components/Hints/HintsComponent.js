@@ -2,14 +2,13 @@ import React from "react"
 import "./HintsComponent.css"
 import { useDispatch } from "react-redux"
 import * as imagesActions from "../../store/image-action"
-
+import { withRouter } from "react-router-dom"
 const HintsComponent = (props) => {
   const dispatch = useDispatch()
 
-  const { history } = props
   const { results, query } = props
   const switchPageHandler = () => {
-    history.push("/results")
+    props.history.push("/results")
   }
 
   const hints = results
@@ -28,7 +27,7 @@ const HintsComponent = (props) => {
       )
     })
 
-  return <>{hints}</>
+  return <>{hints > 0 ? hints : "No results"}</>
 }
 
-export default HintsComponent
+export default withRouter(HintsComponent)

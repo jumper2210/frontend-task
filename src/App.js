@@ -1,7 +1,7 @@
 import React, { Suspense } from "react"
 import "./App.css"
 import SearchPage from "./containers/SearchPage/SearchPage"
-import { Route, Switch, withRouter } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 
 const ResultsPage = React.lazy(() => {
   return import("./containers/ResultsPage/ResultsPage")
@@ -21,4 +21,4 @@ function App() {
   )
 }
 
-export default withRouter(App)
+export default App
