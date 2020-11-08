@@ -1,33 +1,17 @@
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 0.2fr 0.6fr 0.2fr;
-    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-columns: minmax(100px, 1fr);
     justify-items: center;
 }
 
-.title {
-    text-align: center;
-}
-
-.description-box {
-    grid-row: 1;
-    grid-column: 2;
-    align-self:center;
+ .title {
+    font-size: 30px;
+    font-weight: 800;
+    align-self: center;
 }
 
 .search-container {
-    grid-row: 2;
-    grid-column: 2;
-    width: 700px;
-    height: 100px;
-    align-self:  start
-}
-
-.input {
-    border: none;
-}
-
-.input:focus {
-    outline: none;
+    width: 50%;
+    align-self: start;
 }

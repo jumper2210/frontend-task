@@ -1,8 +1,8 @@
 import React from "react"
-import "./ImageDetails.css"
+import "./ImageDetailsComponent.css"
 import { useSelector } from "react-redux"
 
-const ImageDetails = (props) => {
+const ImageDetailsComponent = (props) => {
   const details = useSelector((state) => state.details)
   console.log(details[0].imageUrl)
   return (
@@ -14,4 +14,4 @@ const ImageDetails = (props) => {
   )
 }
 
-export default ImageDetails
+export default ImageDetailsComponent
