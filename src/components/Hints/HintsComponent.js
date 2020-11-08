@@ -1,5 +1,4 @@
 import React from "react"
-import "./HintsComponent.css"
 import { useDispatch } from "react-redux"
 import * as imagesActions from "../../store/image-action"
 import { withRouter } from "react-router-dom"
@@ -27,7 +26,7 @@ const HintsComponent = (props) => {
       )
     })
 
-  return <>{hints > 0 ? hints : "No results"}</>
+  return <>{hints.length > 0 ? hints : "No results"}</>
 }
 
 export default withRouter(HintsComponent)
