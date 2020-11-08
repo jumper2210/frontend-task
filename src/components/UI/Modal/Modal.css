@@ -1,0 +1,13 @@
+.Modal {
+    position: fixed;
+    width: 70%;
+    left: 15%;
+    top: 10%;
+    z-index: 500;
+    background-color: rgb(32, 32, 32);
+    border: 1px solid rgba(22, 10, 4, 0.8);
+    box-shadow: 1px 1px 1px black;
+    box-sizing: border-box;
+    transition: all 0.9s ease-in-out;
+    border-radius: 10px 10px 10px 10px;
+}
